@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, AfterInsert, AfterRemove, AfterUpdate } from 'typeorm';
+import { Exclude } from 'class-transformer';
 
 @Entity()
 export class User {
