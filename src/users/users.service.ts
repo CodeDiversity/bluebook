@@ -27,10 +27,16 @@ export class UsersService {
       throw new Error('user not found');
     }
     Object.assign(user, attrs);
+    // prefer save over insert and update as it will call the hooks
     return this.repo.save(user);
   }
 
-  remove(id) { 
-    return this.repo.delete(id);
+  async remove(id: number) { 
+    // remove will call the hooks while delete will not
+    const user = await this.findOne(id);
+    if (!user) {
+      throw new Error('user not found');
+    }
+    return this.repo.remove(user);
   }
 }
