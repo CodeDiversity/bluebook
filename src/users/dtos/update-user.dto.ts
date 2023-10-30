@@ -1,11 +1,11 @@
 import {IsEmail, IsString, IsOptional} from 'class-validator';
 
 export class UpdateUserDto {
-  @IsString()
+  @IsEmail()
   @IsOptional()
   email?: string;
 
-  @IsEmail()
+  @IsString()
   @IsOptional()
   password?: string;
 }

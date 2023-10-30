@@ -14,7 +14,7 @@ GET http://localhost:3000/auth/1
 
 
 ### Find all by email 
-GET http://localhost:3000/auth/users?email=mtrew@test.com
+GET http://localhost:3000/auth?email=mtrew2016@gmail.com
 
 
 ### Update User
@@ -22,7 +22,7 @@ PATCH http://localhost:3000/auth/1
 Content-Type: application/json
 
 {
-  "email": "mtrew2015@gmail.com" 
+  "email": "mtrew2016@gmail.com" 
 }
 
 ### Delete User
