@@ -17,10 +17,16 @@ export class UsersController {
 
   @Get('/:id')
   async findUser(@Param('id') id: string) {
+    const idToNum = parseInt(id);
+    // if not a valid number return Invalid ID
+    if (isNaN(idToNum)) {
+      throw new NotFoundException('user not found');
+    }
     const user = await this.usersService.findOne(parseInt(id));
     if (!user) {
       throw new NotFoundException('user not found');
     }
+
     return this.usersService.findOne(parseInt(id));
   }
 
