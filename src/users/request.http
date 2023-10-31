@@ -28,3 +28,12 @@ Content-Type: application/json
 ### Delete User
 DELETE http://localhost:3000/auth/6
 
+### Sign In 
+
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "test136@test.com",
+  "password": "test123"
+}
