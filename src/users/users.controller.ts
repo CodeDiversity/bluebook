@@ -4,17 +4,16 @@ import { UsersService } from './users.service';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { Serialize } from '../interceptors/serializeInterceptor';
 import { UserDto } from './dtos/user.dto';
+import { AuthService } from './auth.service';
 
 @Serialize(UserDto)
 @Controller('auth')
 export class UsersController {
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private authService: AuthService) { }
   @Post('/signup')
   createUser(@Body() body: CreateUserDto) {
-    const { email, password } = body;
-    this.usersService.create(email, password);
+    return this.authService.signUp(body.email, body.password);
   }
-
   @Get('/:id')
   async findUser(@Param('id') id: string) {
     const idToNum = parseInt(id);
