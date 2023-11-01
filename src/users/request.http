@@ -8,6 +8,15 @@ Content-Type: application/json
   "password": "test123"
 }
 
+### Sign In
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "test136@test.com",
+  "password": "test123"
+}
+
 ### Find a particular user by id
 
 GET http://localhost:3000/auth/1
@@ -37,3 +46,19 @@ Content-Type: application/json
   "email": "test136@test.com",
   "password": "test123"
 }
+
+### Set Color
+GET http://localhost:3000/auth/colors/red
+
+### Get Color
+
+GET http://localhost:3000/auth/colors
+
+### whoAmI 
+
+GET http://localhost:3000/auth/whoami
+
+
+### Sign Out
+
+POST http://localhost:3000/auth/signout
