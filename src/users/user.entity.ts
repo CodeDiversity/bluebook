@@ -10,7 +10,7 @@ export class User {
 
   @Column()
   password: string;
-  
+
   @AfterInsert()
   logInsert() {
     console.log('Inserted User with id', this.id);
@@ -26,6 +26,6 @@ export class User {
     console.log('Removed User with id', this.id);
   }
 
-  @OneToMany(() => Report, report => report.user)
+  @OneToMany(() => Report, (report) => report.user)
   reports: Report[];
 }
