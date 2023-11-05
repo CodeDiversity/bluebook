@@ -13,7 +13,9 @@ describe('UsersController', () => {
   beforeEach(async () => {
     fakeAuthService = {
       // signUp: () => { },
-      // signIn: () => { },
+      signIn: (email: string, password: string) => { 
+        return Promise.resolve({ id: 1, email, password } as User)
+      },
     };
     fakeUsersService = {
       findOne: (id: number) => {
@@ -54,5 +56,12 @@ describe('UsersController', () => {
   it('findUser returns the user with given id', async () => {
     const user = await controller.findUser('1');
     expect(user.id).toEqual(1);
+  });
+
+  it('signIn updates session object and returns user', async () => {
+    const session = {userId: -10};
+    const user = await controller.signIn({email: 'abc@gmail.com', password: '123'}, session);
+    expect(user.id).toEqual(1);
+    expect(session.userId).toEqual(1);
   });
 });
