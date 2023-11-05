@@ -8,7 +8,8 @@ import { CreateReportDto } from './dtos/create-report.dto';
 export class ReportsService {
   constructor(@InjectRepository(Report) private repo: Repository<Report>) {}
   create(createReportDto: CreateReportDto) {
-    return this.repo.save(createReportDto);
+    const report = this.repo.create(createReportDto);
+    return this.repo.save(report);
   }
 
   findAll() {
