@@ -1,5 +1,4 @@
 ### Create Reports 
-
 POST http://localhost:3000/reports
 content-type: application/json
 

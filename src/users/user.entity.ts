@@ -26,6 +26,9 @@ export class User {
     console.log('Removed User with id', this.id);
   }
 
+  @Column({default: true})
+  admin: boolean
+
   @OneToMany(() => Report, (report) => report.user)
   reports: Report[];
 }
