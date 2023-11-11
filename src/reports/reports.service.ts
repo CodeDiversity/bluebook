@@ -23,6 +23,10 @@ export class ReportsService {
     return this.repo.save(report);
   }
 
+  getEstimate(query: any) {
+    
+  }
+
 
   findOne(id: number) {
     return `This action returns a #${id} report`;
