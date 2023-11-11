@@ -4,10 +4,10 @@ content-type: application/json
 
 {
     "make": "Toyota",
-    "model": "Camry",
-    "year": 2012,
-    "mileage": 100000,
-    "price": 9750,
+    "model": "Corolla",
+    "year": 2013,
+    "mileage": 250000,
+    "price": 5000,
     "lat": 39.713650,
     "lng": -82.599281
 }
@@ -22,4 +22,4 @@ content-type: application/json
 
 ### Get an estimate for a car
 
-GET http://localhost:3000/reports?make=Toyota&model=Camry&year=2012&mileage=100000&lat=39.713650&lng=-82.599281
+GET http://localhost:3000/reports?make=Toyota&model=Corolla&year=2012&mileage=100000&lat=39.713650&lng=-82.599281
