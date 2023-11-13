@@ -12,6 +12,9 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
     return {
       ...dbConfig,
       autoLoadEntities: true,
+      synchronize: process.env.NODE_ENV === 'test' ? true : false,
+      migrationsRun: process.env.NODE_ENV === 'test' ? true : false,
+      keepConnectionAlive: process.env.NODE_ENV === 'test' ? true : false,
     };
   }
 }
